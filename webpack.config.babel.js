@@ -1,15 +1,10 @@
 import webpack from 'webpack';
 import path from 'path';
-import htmlwebpackplugin from 'html-webpack-plugin';
-
-const hwpconfig = new htmlwebpackplugin({
-  template: './src/index.html',
-  filename: 'index.html',
-  inject: 'body'
-});
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import CleanWebpackPlugin from 'clean-webpack-plugin';
 
 export default {
-  entry: ['babel-polyfill', './src/index.js'],
+  entry: './src/index.js',
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist')
@@ -19,7 +14,18 @@ export default {
       { test: /\.jsx?$/, loader:'babel-loader', exclude: /node_modules/ },
     ]
   },
+  devtool: 'eval-source-map',
+  devServer: {
+    contentBase: './dist',
+    compress: true,
+    port: 8000
+  },
   plugins: [
-    hwpconfig
+    new CleanWebpackPlugin(['dist']),
+    new HtmlWebpackPlugin({
+      template: './src/index.html',
+      filename: 'index.html',
+      inject: 'body'
+    })
   ]
 };
