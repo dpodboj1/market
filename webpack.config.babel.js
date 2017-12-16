@@ -2,6 +2,7 @@ import webpack from 'webpack';
 import path from 'path';
 import htmlWebpackPlugin from 'html-webpack-plugin';
 import cleanWebpackPlugin from 'clean-webpack-plugin';
+import uglifyJSPlugin from 'uglifyjs-webpack-plugin';
 
 export default {
   entry: [
@@ -33,6 +34,7 @@ export default {
       inject: 'body'
     }),
     new webpack.NamedModulesPlugin(),
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new uglifyJSPlugin()
   ]
 };
