@@ -1,4 +1,5 @@
 import webpack from 'webpack';
+import path from 'path';
 import merge from 'webpack-merge';
 import base from './webpack.base.babel.js';
 
@@ -7,6 +8,11 @@ const config = {
     'react-hot-loader/patch',
     './src/index.js'
   ],
+  output: {
+    filename: '[name].js',
+    path: path.resolve(__dirname, 'dist'),
+    publicPath: "/"
+  },
   devtool: 'cheap-eval-source-map',
   devServer: {
     hot: true,
