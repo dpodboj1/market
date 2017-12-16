@@ -22,6 +22,7 @@ export default {
   devtool: 'cheap-eval-source-map',
   devServer: {
     hot: true,
+    compress: true,
     publicPath: "/",
     port: 8000,
     contentBase: './dist',
