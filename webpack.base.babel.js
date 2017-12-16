@@ -1,11 +1,18 @@
+import path from 'path';
 import htmlWebpackPlugin from 'html-webpack-plugin';
 import cleanWebpackPlugin from 'clean-webpack-plugin';
 
 export default {
   module: {
     loaders: [
-      { test: /\.jsx?$/, loader:'babel-loader', exclude: /node_modules/ },
+      {
+        test: /\.js$/,
+        include: path.resolve(__dirname, "src"),
+        loader: "babel-loader",
+        exclude: /node_modules/
+      },
     ]
+
   },
   plugins: [
     new cleanWebpackPlugin(['dist']),

@@ -6,7 +6,7 @@
 	"author": "dpodboj1 <podbojec.damir@gmail.com>",
 	"license": "MIT",
 	"scripts": {
-		"prod": "webpack --config webpack.prod.babel.js",
+		"build": "webpack --config webpack.prod.babel.js",
 		"dev": "webpack-dev-server --open --config webpack.dev.babel.js"
 	},
 	"dependencies": {
