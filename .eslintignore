@@ -2,7 +2,9 @@
 webpack.base.babel.js
 webpack.dev.babel.js
 webpack.prod.babel.js
+
 # ignore node_modules
 /node_modules
+
 # ignore dist
 /dist
