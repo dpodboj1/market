@@ -1,31 +1,38 @@
 import webpack from 'webpack';
 import path from 'path';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
-import CleanWebpackPlugin from 'clean-webpack-plugin';
+import htmlWebpackPlugin from 'html-webpack-plugin';
+import cleanWebpackPlugin from 'clean-webpack-plugin';
 
 export default {
-  entry: './src/index.js',
+  entry: [
+    'react-hot-loader/patch',
+    './src/index.js'
+  ],
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist'),
+    publicPath: "/"
   },
   module: {
     loaders: [
       { test: /\.jsx?$/, loader:'babel-loader', exclude: /node_modules/ },
     ]
   },
-  devtool: 'eval-source-map',
+  devtool: 'cheap-eval-source-map',
   devServer: {
+    hot: true,
+    publicPath: "/",
+    port: 8000,
     contentBase: './dist',
-    compress: true,
-    port: 8000
   },
   plugins: [
-    new CleanWebpackPlugin(['dist']),
-    new HtmlWebpackPlugin({
+    new cleanWebpackPlugin(['dist']),
+    new htmlWebpackPlugin({
       template: './src/index.html',
       filename: 'index.html',
       inject: 'body'
-    })
+    }),
+    new webpack.NamedModulesPlugin(),
+    new webpack.HotModuleReplacementPlugin()
   ]
 };
