@@ -8,7 +8,10 @@ const config = {
   entry: {
     main: './src/index.js',
     vendor: [
-      'react', 'react-dom'
+      'react',
+      'react-dom',
+      'firebase',
+      'react-hot-loader'
     ]
   },
   output: {
