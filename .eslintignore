@@ -1,6 +1,8 @@
-#ignore webpack
-webpack.config.babel.js
-#ignore node_modules
+# ignore webpack
+webpack.base.babel.js
+webpack.dev.babel.js
+webpack.prod.babel.js
+# ignore node_modules
 /node_modules
-#ignore dist
+# ignore dist
 /dist

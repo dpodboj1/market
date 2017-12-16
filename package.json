@@ -6,8 +6,8 @@
 	"author": "dpodboj1 <podbojec.damir@gmail.com>",
 	"license": "MIT",
 	"scripts": {
-		"build": "webpack",
-		"start": "webpack-dev-server --open"
+		"prod": "webpack --config webpack.prod.babel.js",
+		"dev": "webpack-dev-server --open --config webpack.dev.babel.js"
 	},
 	"dependencies": {
 		"react": "^16.2.0",
@@ -29,6 +29,7 @@
 		"react-hot-loader": "^3.1.3",
 		"uglifyjs-webpack-plugin": "^1.1.4",
 		"webpack": "^3.10.0",
-		"webpack-dev-server": "^2.9.7"
+		"webpack-dev-server": "^2.9.7",
+		"webpack-merge": "^4.1.1"
 	}
 }
