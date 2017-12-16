@@ -18,8 +18,12 @@ export default {
     new cleanWebpackPlugin(['dist']),
     new htmlWebpackPlugin({
       template: './src/index.html',
+      title: 'Market App',
       filename: 'index.html',
       inject: 'body',
+      minify: {
+        collapseWhitespace: true,
+      },
     }),
   ]
 };
