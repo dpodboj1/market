@@ -11,7 +11,8 @@ const config = {
       'react',
       'react-dom',
       'firebase',
-      'react-hot-loader'
+      'react-hot-loader',
+      'semantic-ui-react'
     ]
   },
   output: {

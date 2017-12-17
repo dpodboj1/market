@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
+import { Container, Button } from 'semantic-ui-react';
 
 class App extends Component {
   render() {
-    return <p>Hello!</p>;
+    return (
+      <Container>
+        <Button content="It's working!" />
+      </Container>
+    );
   }
 }
 
