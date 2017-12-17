@@ -18,7 +18,7 @@ const config = {
     hot: true,
     compress: true,
     publicPath: "/",
-    port: 8000,
+    port: 9000,
     contentBase: './dist',
     historyApiFallback: true,
   },

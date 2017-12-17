@@ -1,16 +1,13 @@
 import React, { Component } from 'react';
-import { Container } from 'semantic-ui-react';
 import Nav from './Nav';
-import Search from './Search';
+import NewAdForm from './NewAdForm';
 
 class Home extends Component {
   render() {
     return (
       <div>
         <Nav />
-        <Container textAlign="center" text>
-          <Search />
-        </Container>
+        <NewAdForm />
       </div>
     );
   }
