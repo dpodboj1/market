@@ -20,6 +20,7 @@ const config = {
     publicPath: "/",
     port: 8000,
     contentBase: './dist',
+    historyApiFallback: true,
   },
   plugins: [
     new webpack.NamedModulesPlugin(),
